@@ -14,14 +14,15 @@ export class UiService {
   toggleAddTask(): void {
     this.showAddTask = !this.showAddTask;
     this.subject.next(this.showAddTask); //whatever it is (toggled or not), that is what gets passed in
+    //next is a method
   }
 
-  //onToggle gets called when we click Add
+  //toggleAddTask() gets called when we click Add
 
   onToggle(): Observable<any> {
     return this.subject.asObservable();
   }
 
-  //we want to subscribe to onToggle
+  //we want to subscribe to onToggle for when we want to do something after we use toggleAddTask()
 
 }
